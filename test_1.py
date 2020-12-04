@@ -80,13 +80,15 @@ def test_basket(driver):
         if len(shortcuts_current) > 0 :
             shortcuts_current[0].click()
 
-
         # нажмем на кнопку удалить
         remove = driver.find_element_by_css_selector("button[name=remove_cart_item]")
         remove.click()
 
         # дождемся удаления
         wait.until(EC.staleness_of(table))
+
+    # перейдем на главную страницу
+    driver.get("https://litecart.stqa.ru/en/")
 
 
 
